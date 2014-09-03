@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="batch" Class="roleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=STJNAPP03;Initial Catalog=batch;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.mgr_user_role" Member="mgr_user_role">
+    <Type Name="mgr_user_role">
+      <Column Name="userid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="Nvarchar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

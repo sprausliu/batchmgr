@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://stjnapp03/itman-new/webservice/query.asmx?wsdl" docRef="http://stjnapp03/itman-new/webservice/query.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://stjnapp03/itman-new/webservice/query.asmx" xmlns:q1="http://stjnapp03/itman-new/" binding="q1:querySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://stjnapp03/itman-new/webservice/query.asmx" xmlns:q2="http://stjnapp03/itman-new/" binding="q2:querySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

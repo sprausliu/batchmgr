@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="bc">
+  <DataContextMoniker Name="/bcDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6b8205a7-697d-491e-98ca-2a6a3300f0f5" absoluteBounds="2.125, 0.5, 2, 5.0483931477864576">
+      <DataClassMoniker Name="/bcDataContext/batch_confirmation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2fa9cd1-3a66-46c2-91f3-34713926de5e" absoluteBounds="2.1399999999999997, 0.96, 1.9700000000000002, 4.488393147786458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6012978-2fb6-4b44-b3bc-28d04b69ed5b" absoluteBounds="4.875, 0.625, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/bcDataContext/batch_confirmation_action" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb162624-c2e7-4fba-be39-709ba7d39619" absoluteBounds="4.89, 1.085, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.125 : 1.6708437093099); (4.875 : 1.6708437093099)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bcDataContext/batch_confirmation/batch_confirmation_batch_confirmation_action" />
+      <nodes>
+        <classShapeMoniker Id="6b8205a7-697d-491e-98ca-2a6a3300f0f5" />
+        <classShapeMoniker Id="e6012978-2fb6-4b44-b3bc-28d04b69ed5b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

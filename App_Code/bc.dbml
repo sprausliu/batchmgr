@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="batch" Class="bcDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=STJNAPP03;Initial Catalog=batch;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.batch_confirmation" Member="batch_confirmation">
+    <Type Name="batch_confirmation">
+      <Column Name="batch_no" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_code" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="qty" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Uom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="shipping_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="recipe_ver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="history" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="planner_comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="assign_lab" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="adj_lab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lab_comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="r_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="add_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="add_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modify_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modify_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="check_times" Storage="_print_time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="current_officer" Storage="_take_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="r_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="r_orgn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mail_times" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="special_comment_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="special_comment_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="batch_confirmation_batch_confirmation_action" Member="batch_confirmation_action" ThisKey="r_id" OtherKey="r_id" Type="batch_confirmation_action" />
+    </Type>
+  </Table>
+  <Table Name="dbo.batch_confirmation_action" Member="batch_confirmation_action">
+    <Type Name="batch_confirmation_action">
+      <Column Name="a_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="batch_no" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="operator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="login_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="r_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="batch_confirmation_batch_confirmation_action" Member="batch_confirmation" ThisKey="r_id" OtherKey="r_id" Type="batch_confirmation" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

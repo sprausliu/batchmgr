@@ -1,0 +1,14 @@
+﻿body {
+    font:75% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;
+    padding:0;
+    margin:0;
+}
+.toolbar {
+float: right;
+}.k-item {
+height: 1.8em;
+}
+.commandbar
+{
+    padding:10px 20px;
+    }

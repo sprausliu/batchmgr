@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="batch" Class="ClientVerifyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=STJNAPP03;Initial Catalog=batch;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Client_Verify" Member="Client_Verify">
+    <Type Name="Client_Verify">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Loginid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PWD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResetPWDRequest" Member="ResetPWDRequest">
+    <Type Name="ResetPWDRequest">
+      <Column Name="guid" Type="System.Guid" DbType="UniqueIdentifier" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="loginid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="requestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Column Name="valid" Type="System.Boolean" DbType="Bit Not NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

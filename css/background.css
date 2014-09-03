@@ -1,0 +1,15 @@
+﻿body {
+    font:75% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;
+}
+.toolbar {
+float: right;
+}.k-item {
+height: 1.8em;
+}
+ul {
+    list-style-type:none;
+}
+*{
+    padding:0;
+    margin:0;
+}

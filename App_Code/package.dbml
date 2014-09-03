@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="batch" Class="packageDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=STJNAPP03\MSSQL08SERVER;Initial Catalog=batch;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.package_category" Member="package_category">
+    <Type Name="package_category">
+      <Column Name="p_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="p_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="p_desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.package_using" Member="package_using">
+    <Type Name="package_using">
+      <Column Name="u_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="u_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="u_reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="u_batch" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="u_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="u_pkg_category" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="u_user" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="u_added" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="u_modifyby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="u_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="u_mailtimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cell_info_package_using" Member="cell_info" ThisKey="u_cell" OtherKey="cell_id" Type="cell_info" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cell_info" Member="cell_info">
+    <Type Name="cell_info">
+      <Column Name="cell_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cell_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_supervisor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_BU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_WIP_limit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_WIP_tolerance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_CT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cell_pkg_building" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="cell_info_package_user" Member="package_user" ThisKey="cell_id" OtherKey="p_cell" Type="package_user" />
+      <Association Name="cell_info_package_using" Member="package_using" ThisKey="cell_id" OtherKey="u_cell" Type="package_using" />
+    </Type>
+  </Table>
+  <Table Name="dbo.package_user" Member="package_user">
+    <Type Name="package_user">
+      <Column Name="p_user" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="p_role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="p_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cell_info_package_user" Member="cell_info" ThisKey="p_cell" OtherKey="cell_id" Type="cell_info" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

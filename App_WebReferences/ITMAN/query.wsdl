@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://stjnapp03/itman-new/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s2="http://stjnapp03/itman-new/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://stjnapp03/itman-new/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://stjnapp03/itman-new/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="softmain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="softmainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="softmainResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="softuser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="softid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="softuserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="softuserResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="softinstall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="suid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="softinstallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="softinstallResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pctrack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pctrackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pctrackResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginhistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginhistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginhistoryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PCQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PCQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PCQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SoftQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SoftQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SoftQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecentLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecentLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecentLoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersonalCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersonalCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PersonalCreditResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAirCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAirCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAirCardResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="tns:CreditView" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditView">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Userid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Point" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCreditResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="L2C">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="L2CResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="L2CResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="anyType" nillable="true" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema targetNamespace="http://stjnapp03/itman-new/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="softmainSoapIn">
+    <wsdl:part name="parameters" element="tns:softmain" />
+  </wsdl:message>
+  <wsdl:message name="softmainSoapOut">
+    <wsdl:part name="parameters" element="tns:softmainResponse" />
+  </wsdl:message>
+  <wsdl:message name="softuserSoapIn">
+    <wsdl:part name="parameters" element="tns:softuser" />
+  </wsdl:message>
+  <wsdl:message name="softuserSoapOut">
+    <wsdl:part name="parameters" element="tns:softuserResponse" />
+  </wsdl:message>
+  <wsdl:message name="softinstallSoapIn">
+    <wsdl:part name="parameters" element="tns:softinstall" />
+  </wsdl:message>
+  <wsdl:message name="softinstallSoapOut">
+    <wsdl:part name="parameters" element="tns:softinstallResponse" />
+  </wsdl:message>
+  <wsdl:message name="pctrackSoapIn">
+    <wsdl:part name="parameters" element="tns:pctrack" />
+  </wsdl:message>
+  <wsdl:message name="pctrackSoapOut">
+    <wsdl:part name="parameters" element="tns:pctrackResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginhistorySoapIn">
+    <wsdl:part name="parameters" element="tns:loginhistory" />
+  </wsdl:message>
+  <wsdl:message name="loginhistorySoapOut">
+    <wsdl:part name="parameters" element="tns:loginhistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PCQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:PCQuery" />
+  </wsdl:message>
+  <wsdl:message name="PCQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:PCQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoftQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:SoftQuery" />
+  </wsdl:message>
+  <wsdl:message name="SoftQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:SoftQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:AccQuery" />
+  </wsdl:message>
+  <wsdl:message name="AccQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:AccQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:RecentLogin" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:RecentLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:PersonalCredit" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:PersonalCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAirCard" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAirCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCredit" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="L2CSoapIn">
+    <wsdl:part name="parameters" element="tns:L2C" />
+  </wsdl:message>
+  <wsdl:message name="L2CSoapOut">
+    <wsdl:part name="parameters" element="tns:L2CResponse" />
+  </wsdl:message>
+  <wsdl:message name="softmainHttpGetIn">
+    <wsdl:part name="keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="softmainHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="softuserHttpGetIn">
+    <wsdl:part name="softid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="softuserHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="pctrackHttpGetIn">
+    <wsdl:part name="pid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pctrackHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="loginhistoryHttpGetIn">
+    <wsdl:part name="pcname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="loginhistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="PCQueryHttpGetIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="PCQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="SoftQueryHttpGetIn">
+    <wsdl:part name="keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SoftQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="AccQueryHttpGetIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="AccQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardHttpGetIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="L2CHttpGetIn">
+    <wsdl:part name="loginid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="L2CHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="softmainHttpPostIn">
+    <wsdl:part name="keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="softmainHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="softuserHttpPostIn">
+    <wsdl:part name="softid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="softuserHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="pctrackHttpPostIn">
+    <wsdl:part name="pid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pctrackHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="loginhistoryHttpPostIn">
+    <wsdl:part name="pcname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="loginhistoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="PCQueryHttpPostIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="PCQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="SoftQueryHttpPostIn">
+    <wsdl:part name="keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SoftQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="AccQueryHttpPostIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="AccQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecentLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PersonalCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardHttpPostIn">
+    <wsdl:part name="keyword" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="QueryAirCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="L2CHttpPostIn">
+    <wsdl:part name="loginid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="L2CHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="querySoap">
+    <wsdl:operation name="softmain">
+      <wsdl:input message="tns:softmainSoapIn" />
+      <wsdl:output message="tns:softmainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <wsdl:input message="tns:softuserSoapIn" />
+      <wsdl:output message="tns:softuserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="softinstall">
+      <wsdl:input message="tns:softinstallSoapIn" />
+      <wsdl:output message="tns:softinstallSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <wsdl:input message="tns:pctrackSoapIn" />
+      <wsdl:output message="tns:pctrackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <wsdl:input message="tns:loginhistorySoapIn" />
+      <wsdl:output message="tns:loginhistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <wsdl:input message="tns:PCQuerySoapIn" />
+      <wsdl:output message="tns:PCQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <wsdl:input message="tns:SoftQuerySoapIn" />
+      <wsdl:output message="tns:SoftQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <wsdl:input message="tns:AccQuerySoapIn" />
+      <wsdl:output message="tns:AccQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <wsdl:input message="tns:RecentLoginSoapIn" />
+      <wsdl:output message="tns:RecentLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <wsdl:input message="tns:PersonalCreditSoapIn" />
+      <wsdl:output message="tns:PersonalCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <wsdl:input message="tns:QueryAirCardSoapIn" />
+      <wsdl:output message="tns:QueryAirCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCredit">
+      <wsdl:input message="tns:AddCreditSoapIn" />
+      <wsdl:output message="tns:AddCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <wsdl:input message="tns:L2CSoapIn" />
+      <wsdl:output message="tns:L2CSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="queryHttpGet">
+    <wsdl:operation name="softmain">
+      <wsdl:input message="tns:softmainHttpGetIn" />
+      <wsdl:output message="tns:softmainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <wsdl:input message="tns:softuserHttpGetIn" />
+      <wsdl:output message="tns:softuserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <wsdl:input message="tns:pctrackHttpGetIn" />
+      <wsdl:output message="tns:pctrackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <wsdl:input message="tns:loginhistoryHttpGetIn" />
+      <wsdl:output message="tns:loginhistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <wsdl:input message="tns:PCQueryHttpGetIn" />
+      <wsdl:output message="tns:PCQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <wsdl:input message="tns:SoftQueryHttpGetIn" />
+      <wsdl:output message="tns:SoftQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <wsdl:input message="tns:AccQueryHttpGetIn" />
+      <wsdl:output message="tns:AccQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <wsdl:input message="tns:RecentLoginHttpGetIn" />
+      <wsdl:output message="tns:RecentLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <wsdl:input message="tns:PersonalCreditHttpGetIn" />
+      <wsdl:output message="tns:PersonalCreditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <wsdl:input message="tns:QueryAirCardHttpGetIn" />
+      <wsdl:output message="tns:QueryAirCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <wsdl:input message="tns:L2CHttpGetIn" />
+      <wsdl:output message="tns:L2CHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="queryHttpPost">
+    <wsdl:operation name="softmain">
+      <wsdl:input message="tns:softmainHttpPostIn" />
+      <wsdl:output message="tns:softmainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <wsdl:input message="tns:softuserHttpPostIn" />
+      <wsdl:output message="tns:softuserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <wsdl:input message="tns:pctrackHttpPostIn" />
+      <wsdl:output message="tns:pctrackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <wsdl:input message="tns:loginhistoryHttpPostIn" />
+      <wsdl:output message="tns:loginhistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <wsdl:input message="tns:PCQueryHttpPostIn" />
+      <wsdl:output message="tns:PCQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <wsdl:input message="tns:SoftQueryHttpPostIn" />
+      <wsdl:output message="tns:SoftQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <wsdl:input message="tns:AccQueryHttpPostIn" />
+      <wsdl:output message="tns:AccQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <wsdl:input message="tns:RecentLoginHttpPostIn" />
+      <wsdl:output message="tns:RecentLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <wsdl:input message="tns:PersonalCreditHttpPostIn" />
+      <wsdl:output message="tns:PersonalCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <wsdl:input message="tns:QueryAirCardHttpPostIn" />
+      <wsdl:output message="tns:QueryAirCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <wsdl:input message="tns:L2CHttpPostIn" />
+      <wsdl:output message="tns:L2CHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="querySoap" type="tns:querySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="softmain">
+      <soap:operation soapAction="http://stjnapp03/itman-new/softmain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <soap:operation soapAction="http://stjnapp03/itman-new/softuser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softinstall">
+      <soap:operation soapAction="http://stjnapp03/itman-new/softinstall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <soap:operation soapAction="http://stjnapp03/itman-new/pctrack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <soap:operation soapAction="http://stjnapp03/itman-new/loginhistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <soap:operation soapAction="http://stjnapp03/itman-new/PCQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <soap:operation soapAction="http://stjnapp03/itman-new/SoftQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <soap:operation soapAction="http://stjnapp03/itman-new/AccQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <soap:operation soapAction="http://stjnapp03/itman-new/RecentLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <soap:operation soapAction="http://stjnapp03/itman-new/PersonalCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <soap:operation soapAction="http://stjnapp03/itman-new/QueryAirCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCredit">
+      <soap:operation soapAction="http://stjnapp03/itman-new/AddCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <soap:operation soapAction="http://stjnapp03/itman-new/L2C" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="querySoap12" type="tns:querySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="softmain">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/softmain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/softuser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softinstall">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/softinstall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/pctrack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/loginhistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/PCQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/SoftQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/AccQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/RecentLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/PersonalCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/QueryAirCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCredit">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/AddCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <soap12:operation soapAction="http://stjnapp03/itman-new/L2C" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="queryHttpGet" type="tns:queryHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="softmain">
+      <http:operation location="/softmain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <http:operation location="/softuser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <http:operation location="/pctrack" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <http:operation location="/loginhistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <http:operation location="/PCQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <http:operation location="/SoftQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <http:operation location="/AccQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <http:operation location="/RecentLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <http:operation location="/PersonalCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <http:operation location="/QueryAirCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <http:operation location="/L2C" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="queryHttpPost" type="tns:queryHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="softmain">
+      <http:operation location="/softmain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="softuser">
+      <http:operation location="/softuser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pctrack">
+      <http:operation location="/pctrack" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginhistory">
+      <http:operation location="/loginhistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCQuery">
+      <http:operation location="/PCQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftQuery">
+      <http:operation location="/SoftQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccQuery">
+      <http:operation location="/AccQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecentLogin">
+      <http:operation location="/RecentLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalCredit">
+      <http:operation location="/PersonalCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirCard">
+      <http:operation location="/QueryAirCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="L2C">
+      <http:operation location="/L2C" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="query">
+    <wsdl:port name="querySoap" binding="tns:querySoap">
+      <soap:address location="http://stjnapp03/itman-new/webservice/query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="querySoap12" binding="tns:querySoap12">
+      <soap12:address location="http://stjnapp03/itman-new/webservice/query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="queryHttpGet" binding="tns:queryHttpGet">
+      <http:address location="http://stjnapp03/itman-new/webservice/query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="queryHttpPost" binding="tns:queryHttpPost">
+      <http:address location="http://stjnapp03/itman-new/webservice/query.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

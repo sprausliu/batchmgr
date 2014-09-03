@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="batch" Class="mcDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=STJNAPP03;Initial Catalog=batch;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.manual_close" Member="manual_close">
+    <Type Name="manual_close">
+      <Column Name="r_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="batch_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="r_reason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="r_type" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="r_inputer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="r_inputdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="r_updateby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="r_updated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="r_dept" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="r_operator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
