@@ -36,7 +36,61 @@
             url: "ReportData.asmx/Over15kgLess2minCount",
             success: function(d) {
                 var chart = echarts.init(document.getElementById("Over15kgLess2min"));
-            	
+            	var option={
+            		title:{
+            			text:"2分钟内投料超过15公斤的行数"
+            		},
+            		tooltip:{
+            			trigger:'axis'
+            		},
+            		toolbox:{
+            			show:true,
+            			feature: {
+                                mark: { show: true },
+                                dataView: { show: true, readOnly: false },
+                                magicType: { show: true, type: ['line', 'bar'] },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                        }
+            		},
+            		calculable: true,
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: d.d[0]
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            axisLabel: {
+                            formatter: '{value}'
+                            }
+                        }
+                    ],
+                    series:function(){
+                    	var ds=new Array();
+                    	var is=d.d[1];
+                    	for(int i=0;i<is.length;i++){
+                    		var serie={
+                    			name:is[i][0].CELL,
+					            type:'line',
+					            stack: '行数',
+					            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					            data:function(){
+					            	var nums=new Array();
+					            	for(var j=0;j<is[i].length;j++){
+					            		nums.push(is[i][j].num);
+					            	}
+					            }
+                    		}
+                    		ds.push(serie);
+                    	}
+                    	return ds;
+                    }
+            	}
+            	chart.setOption(option);
             }
         })
     </script>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 8.5" name="BVReport">
+  <DataContextMoniker Name="/BVReportDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cfb82ca0-c7d4-437a-b5e2-1cea9731295c" absoluteBounds="6.375, 2.25, 2, 3.7257104492187496">
+      <DataClassMoniker Name="/BVReportDataContext/bv_report_data_history" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d77a69c6-3ecc-473c-83cb-02fd235a8450" absoluteBounds="6.39, 2.71, 1.9700000000000002, 3.16571044921875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ee5d10d-a41e-4be0-b0f6-691b51bb11b8" absoluteBounds="3.5, 2.75, 2, 2.24658447265625">
+      <DataClassMoniker Name="/BVReportDataContext/cell_info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5db64b00-3ad0-48cb-b79a-19d8e943a65a" absoluteBounds="3.5149999999999997, 3.21, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89a2b2f9-f43e-44a0-a649-9297a8367e8b" absoluteBounds="9.75, 3, 2, 3.8900577799479166">
+      <DataClassMoniker Name="/BVReportDataContext/BVReportDataWithWeek" />
+      <nestedChildShapes>
+        <elementListCompartment Id="366e3096-842c-41e5-b718-91444667a19a" absoluteBounds="9.765, 3.46, 1.9700000000000002, 3.3300577799479165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

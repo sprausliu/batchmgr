@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="batch" Class="BVReportDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=stjnapp03;Initial Catalog=batch;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="batchConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bv_report_data_his" Member="bv_report_data_histories">
+    <Type Name="bv_report_data_history">
+      <Column Name="LINE_KEY" Type="System.String" DbType="NVarChar(80) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BATCH_NO" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="CELL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ITEM_CODE" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="STEP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="OPRN_NO" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="LINE_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ITEM_NO" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="UM" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="LOT_NO" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ACTUAL_CMPLT_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="WIP_QTY" Type="System.Decimal" DbType="Decimal(30,10)" CanBeNull="true" />
+      <Column Name="ADD_QTY" Type="System.Decimal" DbType="Decimal(30,10)" CanBeNull="true" />
+      <Column Name="CONTAINER" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ADDED_BY" Type="System.String" DbType="NVarChar(240)" CanBeNull="true" />
+      <Column Name="DATE_ADDED" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DIFF_MINS" Type="System.Decimal" DbType="Decimal(18,8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cell_info" Member="cell_infos">
+    <Type Name="cell_info">
+      <Column Name="cell_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cell_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_supervisor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_BU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell_WIP_limit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_WIP_tolerance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_CT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="report_building" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="plant_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BVReportDataWithWeek" Member="BVReportDataWithWeeks">
+    <Type Name="BVReportDataWithWeek">
+      <Column Name="weekdate" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LINE_KEY" Type="System.String" DbType="NVarChar(80) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BATCH_NO" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="CELL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ITEM_CODE" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="STEP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="OPRN_NO" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="LINE_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ITEM_NO" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="UM" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="LOT_NO" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ACTUAL_CMPLT_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="WIP_QTY" Type="System.Decimal" DbType="Decimal(30,10)" CanBeNull="true" />
+      <Column Name="ADD_QTY" Type="System.Decimal" DbType="Decimal(30,10)" CanBeNull="true" />
+      <Column Name="CONTAINER" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ADDED_BY" Type="System.String" DbType="NVarChar(240)" CanBeNull="true" />
+      <Column Name="DATE_ADDED" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DIFF_MINS" Type="System.Decimal" DbType="Decimal(18,8)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
