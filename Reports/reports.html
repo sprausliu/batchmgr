@@ -10,7 +10,7 @@
     <style>
     .charts
     {
-        height:400px;
+        height:500px;
         }
     </style>
 </head>
@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div id="Over15kgLess2min" class="charts"></div>
             </div>
         </div>
@@ -43,6 +43,17 @@
             		tooltip:{
             			trigger:'axis'
             		},
+					legend:{
+						data:(function(){
+							var is=d.d[1];
+							var ls=new Array();
+							for(var i=0;i<is.length;i++){
+								ls.push(is[i][0].CELL);
+							}
+							return ls;
+						})(),
+						y:"bottom"
+					},
             		toolbox:{
             			show:true,
             			feature: {
@@ -69,26 +80,27 @@
                             }
                         }
                     ],
-                    series:function(){
+                    series:(function(){
                     	var ds=new Array();
                     	var is=d.d[1];
-                    	for(int i=0;i<is.length;i++){
+                    	for(var i=0;i<is.length;i++){
                     		var serie={
                     			name:is[i][0].CELL,
 					            type:'line',
 					            stack: '行数',
 					            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-					            data:function(){
+					            data:(function(){
 					            	var nums=new Array();
 					            	for(var j=0;j<is[i].length;j++){
 					            		nums.push(is[i][j].num);
 					            	}
-					            }
+									return nums;
+					            })()
                     		}
                     		ds.push(serie);
                     	}
                     	return ds;
-                    }
+                    })()
             	}
             	chart.setOption(option);
             }
